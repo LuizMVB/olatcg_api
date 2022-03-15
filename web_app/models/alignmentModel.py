@@ -1,4 +1,7 @@
 from Bio.Align import PairwiseAligner, PairwiseAlignments
+from Bio.Seq import Seq
+from Bio.SeqRecord import SeqRecord
+from Bio.Align import MultipleSeqAlignment
 from config import DEFAULT_MATCH_SCORE, DEFAULT_MISMATCH_SCORE
 from web_app.enums.alignmentTypesEnum import AlignmentTypesEnum
 
@@ -31,7 +34,17 @@ class AlignmentModel:
             return self._biopython_formated_str_alignment_to_list(alignment=alignments[0])
         else:
             return self._biopython_pairwise_alignments_to_list(alignments=alignments)
+
+    def msa(self, sequences:list):
+        maxlen = max(len(sequence['bases']) for sequence in sequences)
+        sequenceRecords = list()
+        for sequence in sequences:
+            if len(sequence['bases']) != maxlen:
+                sequenceWithRightLength = str(sequence['bases']).ljust(maxlen, '.')
+                sequenceRecords.append(SeqRecord(Seq(sequenceWithRightLength), id=sequence['id']))
+        return MultipleSeqAlignment(sequenceRecords);
     
+
     def _biopython_formated_str_alignment_to_list(self, alignment):
         '''Return the aligned sequences of Biopython's alignment
         formated string as a dictionary of alignments

@@ -18,10 +18,8 @@ class TaxonomyModel:
                 alignment = AlignmentModel(mode=AlignmentTypesEnum.LOCAL.value).align(sequence_a=user_sequence, sequence_b=database_sequence.sequence, get_first=True)
                 input_sequence = user_sequence
                 match_sequence = database_sequence
-                if bigger_score_alignment == {}:
+                if bigger_score_alignment == {} or alignment['score'] > bigger_score_alignment['score']:
                     bigger_score_alignment = alignment
-                elif alignment['score'] > bigger_score_alignment['score']:
-                    bigger_score_alignment = alignment['score']
             annotated_sequences.append({
                 'input_sequence': input_sequence,
                 'match_sequence': match_sequence.sequence,
