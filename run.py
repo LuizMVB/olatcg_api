@@ -1,8 +1,8 @@
-import web_app
+from web_app import app, db
 import resources
 from web_app.schema import Sequence, Taxonomy
 
 if __name__ == '__main__':
-    web_app.db.create_all()
+    db.create_all()
     resources.add_resources()
-    web_app.app.run(debug=True)
+    app.run(debug=True)
