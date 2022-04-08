@@ -27,8 +27,8 @@ class TaxonomyModel:
                 'match_alignment': bigger_score_alignment['alignment_b'],
                 'taxonomy': match_sequence.taxonomy.nm_taxonomy,
                 'score': bigger_score_alignment['score'],
-                'external_database_id': bigger_score_alignment['external_database_id'],
-                'country_origin': bigger_score_alignment['country_origin']
+                'external_database_id': match_sequence.external_database_id,
+                'country_origin': match_sequence.country_origin
             })
             bigger_score_alignment = {}
         return self._format_taxonomy_to_sequence_response(annotated_sequences)
