@@ -7,6 +7,8 @@ class Sequence(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     sequence = db.Column(db.Text, nullable=False)
     type = db.Column(db.Text, nullable=False)
+    country_origin = db.Column(db.Text, nullable=False)
+    external_database_id = db.Column(db.Text, nullable=False)
     taxonomy_id = db.Column(db.Integer, db.ForeignKey("Taxonomy.id"))
     taxonomy = relationship("Taxonomy", backref="Taxonomy", uselist=False)
 
@@ -14,4 +16,6 @@ class Sequence(db.Model):
 	    return f'''Sequence(id = {self.id}, 
                             sequence = {self.sequence}, 
                             sequence_type = {self.type},
+                            country_origin = {self.country_origin},
+                            external_database_id = {self.external_database_id},
                             taxonomy_id = {self.taxonomy_id})'''
