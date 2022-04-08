@@ -27,7 +27,7 @@ class AlignmentModel:
         sequence_b = sequence_b.upper()
 
         aligner = PairwiseAligner()
-        aligner.mode = self.mode
+        aligner.mode = self.mode.lower()
         alignments = aligner.align(seqA=sequence_a, seqB=sequence_b)
 
         if get_first:

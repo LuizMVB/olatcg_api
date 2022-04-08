@@ -16,10 +16,11 @@ class SequenceAlignmentApi(Resource):
     def get(self):
         args = alignment_get_args.parse_args()
         if not args['tool']:
-            if args['type'] == AlignmentTypesEnum.GLOBAL.value:
+            if args['type'].upper() == AlignmentTypesEnum.GLOBAL.value.upper():
                 return AlignmentModel().align(sequence_a=args['sequence_a'], sequence_b=args['sequence_b'], get_first=args['get_first'])     
-            elif args['type'] == AlignmentTypesEnum.LOCAL.value:
-                pass
+            elif args['type'].upper() == AlignmentTypesEnum.LOCAL.value.upper():
+                return AlignmentModel(mode=args['type']).align(sequence_a=args['sequence_a'], sequence_b=args['sequence_b'], get_first=args['get_first'])     
+
 
 
         
