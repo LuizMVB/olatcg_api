@@ -10,18 +10,16 @@ class TaxonomyModel:
 
     def get_taxonomy_to_sequences(self, sequences:list):
         bigger_score_alignment = {}
-        input_sequence = ''
         match_sequence = {}
         annotated_sequences = []
         for user_sequence in sequences:
             for database_sequence in Sequence.query.all():
                 alignment = AlignmentModel(mode=AlignmentTypesEnum.LOCAL.value).align(sequence_a=user_sequence, sequence_b=database_sequence.sequence, get_first=True)
-                input_sequence = user_sequence
-                match_sequence = database_sequence
                 if bigger_score_alignment == {} or alignment['score'] > bigger_score_alignment['score']:
+                    match_sequence = database_sequence
                     bigger_score_alignment = alignment
             annotated_sequences.append({
-                'input_sequence': input_sequence,
+                'input_sequence': user_sequence,
                 'match_sequence': match_sequence.sequence,
                 'input_alignment': bigger_score_alignment['alignment_a'],
                 'match_alignment': bigger_score_alignment['alignment_b'],
