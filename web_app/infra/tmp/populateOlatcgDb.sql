@@ -134,10 +134,6 @@ VALUES (
         'Denguevirus4 Viruses; Riboviria; Orthornavirae; Kitrinoviricota; Flasuviricetes; Amarillovirales; Flaviviridae; Flavivirus'
     ),
     (
-        33,
-        'Denguevirus3 Viruses; Riboviria; Orthornavirae; Kitrinoviricota; Flasuviricetes; Amarillovirales; Flaviviridae; Flavivirus'
-    ),
-    (
         34,
         'Humanorthopneumovirus Viruses; Riboviria; Orthornavirae; Negarnaviricota; Haploviricotina; Monjiviricetes; Mononegavirales; Pneumoviridae'
     ),
@@ -411,14 +407,6 @@ VALUES (
         32,
         'Dengue virus 4 strain 2960_13/BR/RJ/2013 polyprotein gene, partial cds',
         'KY084519.1'
-    ),
-    (
-        33,
-        'TTTAGGAGCAGGAACTCGACATGTTAATGCGGAACCAGAAACACCCAACATGGATGTCATTGGGGAAAGAATTAAAAGGATCAAGGAGGAGCATAATTCAACATGGCACTATGATGACGAAAACCCCTACAAAACGTGGGCTTACCATGGATCTTATGAAGTCAAAGCCACAGGCTCAGCCTCCTCCATGATAAATGGAGTCGTGAAACTCCTCACTAAACCATGGGATGTGGTGCCCATGGTGACACAGATGGCAATGACAGATACAACTCCATTTGGCCAGCAGAGAGTCTTTAAAGAGAAAGTGGACACCAGGACACCCATGTCCATGCCAGGAACAATAAGGGTTATGGGGATCACAGCGGAGTGGCTCTGGAGAACCCTGGGAAGGAACAAAAG',
-        'DNA',
-        33,
-        'Dengue virus 3 isolate Acre50 NS5 protein (NS5) gene, partial cds',
-        'EU672815.1'
     ),
     (
         34,
