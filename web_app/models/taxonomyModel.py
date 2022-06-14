@@ -48,9 +48,8 @@ class TaxonomyModel:
                         annotated_sequences.append(
                             {
                                 "sequence_description": alignment.title,
-                                "length": alignment.length,
-                                "input_sequence": hsp.query[0:75] + "...",
-                                "match_sequence": hsp.sbjct[0:75] + "..."
+                                "input_sequence": hsp.query,
+                                "match_sequence": hsp.sbjct
                             }
                         )
 

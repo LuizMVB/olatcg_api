@@ -18,4 +18,4 @@ class Sequence(db.Model):
                             sequence_type = {self.type},
                             country_origin = {self.country_origin},
                             external_database_id = {self.external_database_id},
-                            taxonomy_id = {self.taxonomy_id})'''
+                            taxonomy_id = {self.taxonomy.id})'''
