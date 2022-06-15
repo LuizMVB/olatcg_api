@@ -7,7 +7,7 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///infra/tmp/olatcg.db'
 API_PATH = '/api'
 
 ## External Urls
-OLATCG_BACKEND = 'http://localhost:8080/api'
+OLATCG_BACKEND = 'https://olatcg-backend.herokuapp.com/api'
 
 ## Global Alignment
 DEFAULT_MATCH_SCORE = 2
