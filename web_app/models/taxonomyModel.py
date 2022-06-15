@@ -53,6 +53,7 @@ class TaxonomyModel:
                             }
                         )
 
+        result_handle.close()
         return self._format_taxonomy_to_sequence_response(annotated_sequence=annotated_sequences)
 
     def _format_taxonomy_to_sequence_response(self, annotated_sequence):
