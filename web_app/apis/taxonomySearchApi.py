@@ -8,6 +8,8 @@ homology_search_get_args = reqparse.RequestParser()
 homology_search_get_args.add_argument('process_id', type=int)
 homology_search_get_args.add_argument('sequences', action='append')
 homology_search_get_args.add_argument('database', type=SupportedDatabasesEnum, choices=list(SupportedDatabasesEnum).append(None))
+homology_search_get_args.add_argument('match_score', type=int)
+homology_search_get_args.add_argument('mismatch_score', type=int)
 
 class TaxonomySearchApi(Resource):
     def get(self):
