@@ -16,7 +16,7 @@ class TaxonomySearchApi(Resource):
         args = homology_search_get_args.parse_args()
         enum_default_db = SupportedDatabasesEnum.DEFAULT
         if args['database'] == enum_default_db or args['database'] == None:
-            return TaxonomyModel().get_taxonomy_to_sequences(sequences=args['sequences'])
+            return TaxonomyModel().get_taxonomy_to_sequences(sequences=args['sequences'], match_score=args['match_score'], mismatch_score=args['mismatch_score'])
         elif args['database'] == SupportedDatabasesEnum.NCBI_NT:
             if(len(args['sequences']) == 1):
                 tax_blastn_resp = TaxonomyModel().blastn(sequence=args['sequences'][0])
