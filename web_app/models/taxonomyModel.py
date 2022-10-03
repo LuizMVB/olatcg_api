@@ -16,7 +16,7 @@ class TaxonomyModel:
         annotated_sequences = []
         for user_sequence in sequences:
             for database_sequence in Sequence.query.all():
-                alignment = AlignmentModel(mode=AlignmentTypesEnum.LOCAL.value).align(sequence_a=user_sequence, sequence_b=database_sequence.sequence, get_first=True, match_score=match_score, mismatch_score=mismatch_score)
+                alignment = AlignmentModel(mode=AlignmentTypesEnum.LOCAL.value, match_score=match_score, mismatch_score=mismatch_score).align(sequence_a=user_sequence, sequence_b=database_sequence.sequence, get_first=True)
                 if bigger_score_alignment == {} or alignment['similarity'] > bigger_score_alignment['similarity']:
                     match_sequence = database_sequence
                     bigger_score_alignment = alignment
